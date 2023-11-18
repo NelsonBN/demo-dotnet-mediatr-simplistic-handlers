@@ -2,7 +2,7 @@
 
 namespace Demo.DTOs;
 
-public sealed record ProductResponse(Guid Id, string Name, uint Quantity, double Price)
+public sealed record ProductResponse(Guid Id, string? Name, uint Quantity, double Price)
 {
     public static implicit operator ProductResponse(Product product)
         => new(
