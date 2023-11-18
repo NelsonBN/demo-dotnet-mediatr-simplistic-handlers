@@ -6,8 +6,6 @@ namespace Demo.UseCases;
 
 public sealed record GetProductQuery(Guid Id) : IRequest<ProductResponse?>
 {
-    public static GetProductsQuery Instance => new();
-
     internal sealed class Handler(IProductsRepository repository) : IRequestHandler<GetProductQuery, ProductResponse?>
     {
         private readonly IProductsRepository _repository = repository;
